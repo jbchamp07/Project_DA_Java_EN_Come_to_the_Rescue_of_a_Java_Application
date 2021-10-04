@@ -27,12 +27,15 @@ public class AnalyticsCounter {
 			try {
 				do{
 					line = reader.readLine();
-					if(myMap.get(line) != null){
-						int nb = myMap.get(line) + 1;
-						myMap.put(line,nb);
-					}else{
-						myMap.put(line,1);
+					if(line != null){
+						if(myMap.get(line) != null){
+							int nb = myMap.get(line) + 1;
+							myMap.put(line,nb);
+						}else{
+							myMap.put(line,1);
+						}
 					}
+
 				}while(line != null);
 			} catch (IOException e) {
 				System.out.println(e.getMessage());
@@ -66,11 +69,10 @@ public class AnalyticsCounter {
             reader.close();
 			freader.close();
             // next generate output
-            FileWriter writer = null;
-			writer = new FileWriter("result.out");
-			writer.write("headache: " + headacheCount + "\n");
-			writer.write("rash: " + rashCount + "\n");
-			writer.write("dialated pupils: " + pupilCount + "\n");
+            FileWriter writer = new FileWriter("result.out");
+			for(int i = 0; i < list.size(); i++){
+				writer.write(list.get(i).getKey() + " : " + list.get(i).getValue() + "\n");
+			}
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
