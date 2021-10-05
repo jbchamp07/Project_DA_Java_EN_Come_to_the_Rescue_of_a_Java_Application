@@ -27,22 +27,6 @@ public class AnalyticsCounter {
 		list = getInOrder(list);
 		list.forEach(System.out::println);
 
-
-
-
-		/*ArrayList<Tableau> array = new ArrayList<>();
-		line = reader.readLine();
-		array.add(0,new Tableau(line,1));
-		for(int i = 0; line != null; i++){
-			line = reader.readLine();
-			if(array.contains(new Tableau(line))){
-				array.set(array.indexOf(new Tableau(line)),new Tableau(line,2));
-			}else{
-				array.add(new Tableau(line,1));
-			}
-		}
-		System.out.println(array.get(0).name + " : " + (array.get(0).nb));
-		System.out.println(array.get(1).name + " : " + (array.get(1).nb));*/
 		try {
 			reader.close();
 			freader.close();
