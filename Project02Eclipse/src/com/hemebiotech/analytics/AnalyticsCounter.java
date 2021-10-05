@@ -4,12 +4,40 @@ import java.io.*;
 import java.util.*;
 
 public class AnalyticsCounter {
-	private static BufferedReader reader;
-	private static FileReader freader;
+	/*private static BufferedReader reader;
+	private static FileReader freader;*/
 	private final static String filepath = "D:\\ide\\projet formation\\Project02Eclipse\\symptoms.txt";
 
-	public static void main(String args[]){
-		//BufferedReader reader = null;
+	public List<String> getSymptomsList(){
+
+		ReadSymptomDataFromFile readSymptomDataFromFile = new ReadSymptomDataFromFile(filepath);
+		List<String> list = readSymptomDataFromFile.GetSymptoms();
+		return list;
+
+
+	}
+
+	public Map<String, Integer> calculSymptoms(List<String> liste){
+		Map<String, Integer> myMap = new HashMap<String, Integer>();
+		for(String l : liste){
+			if(myMap.get(l) != null){
+				int nb = myMap.get(l) + 1;
+				myMap.put(l,nb);
+			}else{
+				myMap.put(l,1);
+			}
+		}
+		return myMap;
+	}
+
+	public static Map<String, Integer> getInOrder(Map<String, Integer> map){
+
+		return map;
+	}
+
+	// pour write => creer classe avec implementation avec son interface
+
+	/*public static void ouvertureRessources(){
 		try {
 			freader = new FileReader(filepath);
 			reader = new BufferedReader(freader);
@@ -17,24 +45,15 @@ public class AnalyticsCounter {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
+	}
 
-
-
-		Map<String, Integer> myMap = new HashMap<String, Integer>();
-		myMap = getSymptoms(myMap);
-
-		List<Map.Entry<Integer, Integer>> list = new ArrayList(myMap.entrySet());
-		list = getInOrder(list);
-		list.forEach(System.out::println);
-
+	public static void fermetureRessources(){
 		try {
 			reader.close();
 			freader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		writeResult(list);
-
 	}
 
 	public static void writeResult(List<Map.Entry<Integer, Integer>> list){
@@ -76,6 +95,6 @@ public class AnalyticsCounter {
 	public static List<Map.Entry<Integer, Integer>> getInOrder(List<Map.Entry<Integer, Integer>> list){
 		list.sort(Map.Entry.comparingByValue());
 		return list;
-	}
+	}*/
 
 }
