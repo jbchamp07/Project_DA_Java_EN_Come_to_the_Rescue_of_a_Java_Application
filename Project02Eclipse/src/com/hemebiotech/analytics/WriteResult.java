@@ -3,6 +3,7 @@ package com.hemebiotech.analytics;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 
 public class WriteResult implements IWriteResult{
@@ -12,7 +13,10 @@ public class WriteResult implements IWriteResult{
         FileWriter writer = null;
         try {
             writer = new FileWriter("result.out");
-            writer.write("test");
+            String liste = map.toString();
+            liste = liste.replaceAll(", ","\n");
+            writer.write(liste);
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
