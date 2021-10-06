@@ -30,8 +30,8 @@ public class AnalyticsCounter {
 		return myMap;
 	}
 
-	public static Map<String, Integer> getInOrder(Map<String, Integer> map){
-
+	public Map<String, Integer> getInOrder(Map<String, Integer> map){
+        map = new TreeMap<String, Integer>(map);
 		return map;
 	}
 
