@@ -6,7 +6,7 @@ import java.util.*;
 public class AnalyticsCounter {
 	/*private static BufferedReader reader;
 	private static FileReader freader;*/
-	private final static String filepath = "D:\\ide\\projet formation\\Project02Eclipse\\symptoms.txt";
+	private final static String filepath = "Project02Eclipse\\symptoms.txt";
 
 	public List<String> getSymptomsList(){
 
