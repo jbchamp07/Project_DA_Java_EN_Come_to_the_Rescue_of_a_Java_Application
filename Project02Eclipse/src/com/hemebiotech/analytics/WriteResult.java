@@ -15,6 +15,8 @@ public class WriteResult implements IWriteResult{
             writer = new FileWriter("result.out");
             String liste = map.toString();
             liste = liste.replaceAll(", ","\n");
+            liste = liste.replace("{","");
+            liste = liste.replace("}","");
             writer.write(liste);
             writer.close();
         } catch (IOException e) {
