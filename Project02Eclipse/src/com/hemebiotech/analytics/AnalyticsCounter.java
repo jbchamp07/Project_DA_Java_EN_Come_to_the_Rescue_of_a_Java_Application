@@ -42,9 +42,10 @@ public class AnalyticsCounter {
 		return map;
 	}
 
-	public void writeINResult(Map<String, Integer> myMap){
-		WriteResult writeResult = new WriteResult();
-		writeResult.writeData(myMap);
+	public void writeResult(Map<String, Integer> myMap){
+		WriteResult writeResult = this.iWriteResult.writeData(myMap);
+
+		//writeResult.writeData(myMap);
 	}
 
 	// pour write => creer classe avec implementation avec son interface

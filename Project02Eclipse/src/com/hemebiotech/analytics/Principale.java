@@ -11,7 +11,7 @@ public class Principale {
         Map<String, Integer> myMap = analyticsCounter.calculSymptoms(analyticsCounter.getSymptomsList());
         System.out.println(myMap);
         myMap = analyticsCounter.getInOrder(myMap);
-        analyticsCounter.writeINResult(myMap);
+        analyticsCounter.writeResult(myMap);
         /*AnalyticsCounter analyticsCounter = new AnalyticsCounter();
         Map<String, Integer> myMap = analyticsCounter.calculSymptoms(analyticsCounter.getSymptomsList());
         System.out.println(myMap);
