@@ -6,12 +6,19 @@ import java.util.*;
 public class AnalyticsCounter {
 	/*private static BufferedReader reader;
 	private static FileReader freader;*/
-	private final static String filepath = "Project02Eclipse\\symptoms.txt";
+	private static String filepath;
+
+	private final ISymptomReader iSymptomReader;
+	private final IWriteResult iWriteResult;
+
+	public AnalyticsCounter(ISymptomReader isr, IWriteResult iwr) {
+		this.iSymptomReader = isr;
+		this.iWriteResult = iwr;
+	}
 
 	public List<String> getSymptomsList(){
-
-		ReadSymptomDataFromFile readSymptomDataFromFile = new ReadSymptomDataFromFile(filepath);
-		List<String> list = readSymptomDataFromFile.GetSymptoms();
+		//ReadSymptomDataFromFile readSymptomDataFromFile = new ReadSymptomDataFromFile(filepath);
+		List<String> list = this.iSymptomReader.GetSymptoms();
 		return list;
 
 
@@ -33,6 +40,11 @@ public class AnalyticsCounter {
 	public Map<String, Integer> getInOrder(Map<String, Integer> map){
         map = new TreeMap<String, Integer>(map);
 		return map;
+	}
+
+	public void writeINResult(Map<String, Integer> myMap){
+		WriteResult writeResult = new WriteResult();
+		writeResult.writeData(myMap);
 	}
 
 	// pour write => creer classe avec implementation avec son interface
