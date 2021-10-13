@@ -6,6 +6,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.TreeMap;
 
+/**
+ * The type Write result.
+ */
 public class WriteResult implements IWriteResult{
 
     @Override
