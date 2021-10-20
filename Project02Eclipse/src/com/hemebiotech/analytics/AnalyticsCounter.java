@@ -7,8 +7,6 @@ import java.util.*;
  * The type Analytics counter.
  */
 public class AnalyticsCounter {
-	/*private static BufferedReader reader;
-	private static FileReader freader;*/
 	private static String filepath;
 
 	private final ISymptomReader iSymptomReader;

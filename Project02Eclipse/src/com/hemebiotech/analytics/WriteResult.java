@@ -26,15 +26,6 @@ public class WriteResult implements IWriteResult{
             e.printStackTrace();
         }
 
-
-        /*try {
-            for(int i = 0; i < map.size(); i++){
-                writer.write(map. + " : " + map.get(i).getValue() + "\n");
-            }
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
 }
